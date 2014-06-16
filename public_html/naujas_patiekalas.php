@@ -21,6 +21,8 @@ if (isset($_POST['title']) && isset($_POST['ingredients']) && isset($_POST['cate
             form {background-color:#F1FCA2;}
             body {background-color:#F1FCA2;}
         </style>
+        <img src="pictures/top.png" /><br>
+        <h1>Naujas patiekalas</h1>
         <form method="POST">
             <div>
                 <label for="title">Pavadinimas</label>
