@@ -24,7 +24,7 @@ $res = mysql_query($sql);
 while ($row = mysql_fetch_array($res)){
     //echo '<option value="'.$row['title'].'">'.$row['title'].'</option>';
     echo "<h1>".$row['title'].'</h1>';
-    $sql_inner = "SELECT title, ingredients FROM food WHERE category=\"".$row['category'].'";';
+    $sql_inner = "SELECT title, ingredients FROM food WHERE category=\"".$row['title'].'";';
     $res_inner = mysql_query($sql_inner);
     $counter = 1;
     while ($inner_row = mysql_fetch_array($res_inner)){
