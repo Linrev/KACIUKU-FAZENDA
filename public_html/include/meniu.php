@@ -1,4 +1,4 @@
-<?
+<?php
 //Formuojamas meniu.
 if (isset($session) && $session->logged_in) {
     $path = "";
@@ -10,7 +10,7 @@ if (isset($session) && $session->logged_in) {
 >
 
     <table align="left" width=300% border="0" cellspacing="3" cellpadding="3" style="background-color:#F7C567;font-size:23px;font-family:Bradley Hand ITC;" class="meniu"  };>
-        <?
+        <?php
         echo "Vartotojas: <b>$session->username</b> <br>";
         echo "</td></tr><tr><td>";
         echo "|<a href=\"" . $path ."meniu.php\">  <b> Meniu </b> </a>| &nbsp;&nbsp;"
@@ -32,11 +32,11 @@ if (isset($session) && $session->logged_in) {
         echo "</td></tr>";
         ?>
     </table> 
-    <?
+    <?php
 }
 ?>
 
-<?
+<?php
 /* {
 
   function Meniu($session) {
@@ -48,7 +48,7 @@ if (isset($session) && $session->logged_in) {
   }
   ?>
   <table width=100% border="0" cellspacing="1" cellpadding="3" class="meniu">
-  <?
+  <?php
   echo "<tr><td>";
   echo "Prisijungęs vartotojas: <b>$session->username</b> <br>";
   echo "</td></tr><tr><td>";
@@ -62,12 +62,13 @@ if (isset($session) && $session->logged_in) {
   //Administratoriaus sąsaja rodoma tik administratoriui
   if ($session->isAdmin()) {
   echo "[<a href=\"" . $path . "admin/admin.php\">Administratoriaus sąsaja</a>] &nbsp;&nbsp;";
+  echo "[<a href=\"" . $path . "uzsakymo_ivedimas.php\">Prekių įvedimas</a>] &nbsp;&nbsp;";
   }
   echo "[<a href=\"" . $path . "process.php\">Atsijungti</a>]";
   echo "</td></tr>";
   ?>
   </table>
-  <?
+  <?php
   }
   }
 

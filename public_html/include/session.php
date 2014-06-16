@@ -1,4 +1,4 @@
-﻿<?
+﻿<?php
 
 include("database.php");
 include("mailer.php");

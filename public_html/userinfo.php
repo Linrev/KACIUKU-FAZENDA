@@ -1,4 +1,4 @@
-<?
+<?php
 include("include/session.php");
 ?>
 
@@ -7,13 +7,11 @@ include("include/session.php");
 <title>Vartotojo paskyros duomenys</title>
 <body>
 <style>
-<!------------------------------------------------->
 	form {background-color:#F1FCA2;}
 	body {background-color:#F1FCA2;}
-<!------------------------------------------------->
 </style>
 
-<?
+<?php
 echo "<img src=\"pictures/top.png\" /><br>"; 
 //Jei vartotojas prisijungęs
 if($session->logged_in){
@@ -52,16 +50,16 @@ if($session->logged_in){
 
 <form action="process.php" method="POST">
 <table align="left" border="0" cellspacing="0" cellpadding="3">
-<tr><td>Vartotojo vardas:</td><td><input type="text" name="user" maxlength="30" value="<? echo $form->value("user"); ?>"></td><td><? echo $form->error("user"); ?></td></tr>
-<tr><td>Slaptažodis:</td><td><input type="password" name="pass" maxlength="30" value="<? echo $form->value("pass"); ?>"></td><td><? echo $form->error("pass"); ?></td></tr>
-<tr><td colspan="2" align="left"><input type="checkbox" name="remember" <? if($form->value("remember") != ""){ echo "pažymėta"; } ?>>
+<tr><td>Vartotojo vardas:</td><td><input type="text" name="user" maxlength="30" value="<?php echo $form->value("user"); ?>"></td><td><?php echo $form->error("user"); ?></td></tr>
+<tr><td>Slaptažodis:</td><td><input type="password" name="pass" maxlength="30" value="<?php echo $form->value("pass"); ?>"></td><td><?php echo $form->error("pass"); ?></td></tr>
+<tr><td colspan="2" align="left"><input type="checkbox" name="remember" <?php if($form->value("remember") != ""){ echo "pažymėta"; } ?>>
 <font size="2">Atsiminti mane &nbsp;&nbsp;&nbsp;&nbsp;
 <input type="hidden" name="sublogin" value="1">
 <input type="submit" value="Prisijungti"></td></tr>
 <tr><td colspan="2" align="left"><br><font size="2">[<a href="forgotpass.php">Pamiršote slaptažodį?</a>]</font></td><td align="right"></td></tr>
 <tr><td colspan="2" align="left"><br>Nesate užsiregistravę? <a href="register.php">Registruotis</a></td></tr>
 
-<?
+<?php
 echo "<tr><td colspan=\"2\" align=\"left\"><br>";
 echo "<b>Vartotojų iš viso:</b> ".$database->getNumMembers()."<br>";
 echo "Yra $database->num_active_users registruotų vartotojų ir ";
@@ -72,7 +70,7 @@ echo "</td></tr>";
 </table>
 </form>
 
-<?
+<?php
 } //Formos pabaiga
 ?>
 </body>

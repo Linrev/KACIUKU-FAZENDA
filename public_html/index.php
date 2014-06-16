@@ -1,4 +1,4 @@
-﻿<?
+﻿<?php
 include("include/session.php");
 ?>
 
@@ -12,19 +12,17 @@ include("include/session.php");
        </head>
     <body>
 <style>
-<!------------------------------------------------->
 	form {background-color:#F1FCA2;}
 	body {background-color:#F1FCA2;}
-<!------------------------------------------------->
 </style>
 
-        <?
+        <?php
         echo "<img src=\"pictures/top.png\" /><br>";
         ?>
 
         <table cellpadding="0" cellspacing="0">
             <tr><td>
-                    <?
+                    <?php
 //Jei vartotojas prisijungęs
                     if ($session->logged_in) {
                         include("include/meniu.php");
@@ -35,7 +33,7 @@ include("include/session.php");
                         <h1>Pradinis sistemos puslapis (index.php).</h1>
                         </font>
 
-                        <?
+                        <?php
 //Jei vartotojas neprisijungęs, rodoma prisijungimo forma
 //Jei atsiranda klaidų, rodomi pranešimai.
                     } else {
@@ -47,14 +45,14 @@ include("include/session.php");
 
                         <form action="process.php" method="POST">
                             <table align="left" border="0" cellspacing="3" cellpadding="3" >
-                                <tr><td><b>Prisijungimo vardas:</td><td><input type="text" name="user" maxlength="50" value="<? echo $form->value("user"); ?>"></td><td><? echo $form->error("user"); ?><b></td>
-				        <td colspan="2" align="left"><input type="checkbox" name="remember" <? if ($form->value("remember") != "") {
+                                <tr><td><b>Prisijungimo vardas:</td><td><input type="text" name="user" maxlength="50" value="<?php echo $form->value("user"); ?>"></td><td><?php echo $form->error("user"); ?><b></td>
+				        <td colspan="2" align="left"><input type="checkbox" name="remember" <?php if ($form->value("remember") != "") {
                                                   echo "Pažymėtas";
                                                      } ?>>
 				        <font size="2">Atsiminti mane &nbsp;&nbsp;&nbsp;&nbsp;
 				</tr>
 
-                                <tr><td><b>Slaptažodis:</td><td><input type="password" name="pass" maxlength="30" value="<? echo $form->value("pass"); ?>"></td><td><? echo $form->error("pass"); ?><b></td>
+                                <tr><td><b>Slaptažodis:</td><td><input type="password" name="pass" maxlength="30" value="<?php echo $form->value("pass"); ?>"></td><td><?php echo $form->error("pass"); ?><b></td>
 				        <td colspan="2" align="left"><br><font size="2">[<a href="forgotpass.php">Pamiršote slaptažodį?</a>]</font></td><td align="right"></td>
 				</tr>
 			
@@ -69,7 +67,7 @@ include("include/session.php");
                         </table>
                         </form>
 			
-			<?
+			<?php
 			 echo "<img src=\"pictures/naujas.png\" /><br>";
        			 ?>
 
@@ -81,7 +79,7 @@ include("include/session.php");
                         </form>
 
 
-                        <?
+                        <?php
                     }
 
                     echo "</td></tr><tr><td align=\"left\"><br><br>";

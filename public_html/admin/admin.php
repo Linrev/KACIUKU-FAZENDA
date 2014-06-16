@@ -1,4 +1,4 @@
-﻿<?
+﻿<?php
 include("../include/session.php");
 
 /**
@@ -69,7 +69,7 @@ function displayBannedUsers() {
 
 
 
-<?
+<?php
 /**
  * Jei ne administratorius redirektinama i pagrindini puslapi
  */
@@ -97,7 +97,7 @@ if (!$session->isAdmin()) {
     <table align="left" border="0" cellspacing="5" cellpadding="5">
         <tr><td>
 
-    <?
+    <?php
     /**
      * Display Users Table
      */
@@ -105,7 +105,7 @@ if (!$session->isAdmin()) {
 
                 <h3>Sistemos vartotojai:</h3>
 
-    <?
+    <?php
     displayUsers();
     ?>
 
@@ -117,7 +117,7 @@ if (!$session->isAdmin()) {
     <tr>
         <td>
 
-    <?
+    <?php
     /**
      * Update User Level
      */
@@ -125,7 +125,7 @@ if (!$session->isAdmin()) {
 
             <h3>Atnaujinti vartotojo lygį</h3>
 
-    <?
+    <?php
     echo $form->error("upduser");
     ?>
 
@@ -133,7 +133,7 @@ if (!$session->isAdmin()) {
                 <form action="adminprocess.php" method="POST">
                     <tr><td>
                             Vartotojo vardas:<br>
-                            <input type="text" name="upduser" maxlength="30" value="<? echo $form->value("upduser"); ?>">
+                            <input type="text" name="upduser" maxlength="30" value="<?php echo $form->value("upduser"); ?>">
                         </td>
                         <td>Lygis:<br>
                             <select name="updlevel">
@@ -157,7 +157,7 @@ if (!$session->isAdmin()) {
     <tr>
         <td>
 
-    <?
+    <?php
     /**
      * Delete User
      */
@@ -165,13 +165,13 @@ if (!$session->isAdmin()) {
 
             <h3>Vartotojo šalinimas</h3>
 
-    <?
+    <?php
     echo $form->error("deluser");
     ?>
 
             <form action="adminprocess.php" method="POST">
                 Vartotojo vardas:<br>
-                <input type="text" name="deluser" maxlength="30" value="<? echo $form->value("deluser"); ?>">
+                <input type="text" name="deluser" maxlength="30" value="<?php echo $form->value("deluser"); ?>">
                 <input type="hidden" name="subdeluser" value="1">
                 <input type="submit" value="Šalinti">
             </form>
@@ -183,7 +183,7 @@ if (!$session->isAdmin()) {
     <tr>
         <td>
 
-    <?
+    <?php
     /**
      * Delete Inactive Users
      */
@@ -218,7 +218,7 @@ if (!$session->isAdmin()) {
     <tr>
         <td>
 
-    <?
+    <?php
     /**
      * Ban User
      */
@@ -226,13 +226,13 @@ if (!$session->isAdmin()) {
 
             <h3>Vartotojo blokavimas</h3>
 
-    <?
+    <?php
     echo $form->error("banuser");
     ?>
 
             <form action="adminprocess.php" method="POST">
                 Vartotojo vardas:<br>
-                <input type="text" name="banuser" maxlength="30" value="<? echo $form->value("banuser"); ?>">
+                <input type="text" name="banuser" maxlength="30" value="<?php echo $form->value("banuser"); ?>">
                 <input type="hidden" name="subbanuser" value="1">
                 <input type="submit" value="Blokuoti">
             </form>
@@ -243,7 +243,7 @@ if (!$session->isAdmin()) {
     </tr>
     <tr><td>
 
-    <?
+    <?php
     /**
      * Display Banned Users Table
      */
@@ -251,7 +251,7 @@ if (!$session->isAdmin()) {
 
             <h3>Blokuoti vartotojai:</h3>
 
-    <?
+    <?php
     displayBannedUsers();
     ?>
 
@@ -262,7 +262,7 @@ if (!$session->isAdmin()) {
     <tr>
         <td>
 
-    <?
+    <?php
     /**
      * Delete Banned User
      */
@@ -270,13 +270,13 @@ if (!$session->isAdmin()) {
 
             <h3>Blokuoto vartotojo šalinimas</h3>
 
-    <?
+    <?php
     echo $form->error("delbanuser");
     ?>
 
             <form action="adminprocess.php" method="POST">
                 Vartotojo vardas:<br>
-                <input type="text" name="delbanuser" maxlength="30" value="<? echo $form->value("delbanuser"); ?>">
+                <input type="text" name="delbanuser" maxlength="30" value="<?php echo $form->value("delbanuser"); ?>">
                 <input type="hidden" name="subdelbanned" value="1">
                 <input type="submit" value="Šalinti blokuotą vartotoją">
             </form>
@@ -285,6 +285,6 @@ if (!$session->isAdmin()) {
     </body>
     </html>
 
-    <?
+    <?php
 }
 ?>

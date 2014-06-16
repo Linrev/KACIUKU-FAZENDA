@@ -1,4 +1,4 @@
-<?
+<?php
 include("include/session.php");
 ?>
 <html>
@@ -7,17 +7,17 @@ include("include/session.php");
 	
     <body>
 <style>
-<!------------------------------------------------->
 	form {background-color:#F1FCA2;}
 	body {background-color:#F1FCA2;}
-<!------------------------------------------------->
 </style>
-<?
+<?php
  
  
 
 	echo "<img src=\"pictures/top.png\" /><br>";
 	?>
+
+<a href="naujas_patiekalas">Ivesti nauja patiekala</a>
 	
 
 	<h1> Karstieji patiekalai </h1>
@@ -141,7 +141,7 @@ include("include/session.php");
        <div align="right"><b>LT;1.99</b></div>
              <div align="right"><button class="btn btn-success btnadd" onclick="Add(25,-1);">
                    <span class="glyphicon glyphicon-plus"></span></button></div>				   
-<?
+<?php
 
 
 //Nuoroda į pradžią

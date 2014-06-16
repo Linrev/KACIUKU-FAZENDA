@@ -1,4 +1,4 @@
-﻿<?
+﻿<?php
 include("include/session.php");
 ?>
 
@@ -7,7 +7,7 @@ include("include/session.php");
 <title>Užmirštas slaptažodis</title>
 <body>
 
-<?
+<?php
 echo "<img src=\"pictures/top.png\" />"; 
 /**
  * Forgot Password form has been submitted and no errors
@@ -47,15 +47,15 @@ else{
 <h1>Pamirštas slaptažodis</h1>
 Naujas slaptažodis bus nusiųstas su Jūsų paskyra susietu e-pašto adresu.<br>
 Įveskite vartotojo vardą:<br><br>
-<? echo $form->error("user"); ?>
+<?php echo $form->error("user"); ?>
 <form action="process.php" method="POST">
-<b>Vartotojo vardas:</b> <input type="text" name="user" maxlength="30" value="<? echo $form->value("user"); ?>">
+<b>Vartotojo vardas:</b> <input type="text" name="user" maxlength="30" value="<?php echo $form->value("user"); ?>">
 <input type="hidden" name="subforgot" value="1">
 <input type="submit" value="Naujas slaptažodis">
 <br><br>Atgal į prisijungimo [<a href=index.php>formą</a>]<br>
 </form>
 
-<?
+<?php
 }
 ?>
 

@@ -1,4 +1,4 @@
-<?
+<?php
 include("include/session.php");
 ?>
 
@@ -7,7 +7,7 @@ include("include/session.php");
     <title>Paskyros redagavimas</title>
     <body>
 
-        <?
+        <?php
         echo "<img src=\"pictures/top.png\" /><br>";
         /**
          * User has submitted form without errors and user's
@@ -34,19 +34,19 @@ include("include/session.php");
                                     <tr>
                                         <td>Dabartinis slaptažodis:</td>
                                         <td><input type="password" name="curpass" maxlength="30" value="
-                                                   <? echo $form->value("curpass"); ?>"></td>
-                                        <td><? echo $form->error("curpass"); ?></td>
+                                                   <?php echo $form->value("curpass"); ?>"></td>
+                                        <td><?php echo $form->error("curpass"); ?></td>
                                     </tr>
                                     <tr>
                                         <td>Naujas slaptažodis:</td>
                                         <td><input type="password" name="newpass" maxlength="30" value="
-                                                   <? echo $form->value("newpass"); ?>"></td>
-                                        <td><? echo $form->error("newpass"); ?></td>
+                                                   <?php echo $form->value("newpass"); ?>"></td>
+                                        <td><?php echo $form->error("newpass"); ?></td>
                                     </tr>
                                     <tr>
                                         <td>E-paštas:</td>
                                         <td><input type="text" name="email" maxlength="50" value="
-                                            <?
+                                            <?php
                                             if ($form->value("email") == "") {
                                                 echo $session->userinfo['email'];
                                             } else {
@@ -54,7 +54,7 @@ include("include/session.php");
                                             }
                                             ?>">
                                         </td>
-                                        <td><? echo $form->error("email"); ?></td>
+                                        <td><?php echo $form->error("email"); ?></td>
                                     </tr>
                                     <tr><td colspan="2" align="right">
                                             <input type="hidden" name="subedit" value="1">
@@ -63,7 +63,7 @@ include("include/session.php");
                                 </table>
                             </form>
 
-                            <?
+                            <?php
 //Nuoroda į pradžią
                             echo "<br>Atgal į [<a href=\"index.php\">Pradžia</a>]<br>";
                             ?>
@@ -71,7 +71,7 @@ include("include/session.php");
                         </td></tr>
                 </table>
 
-                <?
+                <?php
             } else {
                 echo "<h1>Prisijungimas</h1>";
                 if ($form->num_errors > 0) {
@@ -81,9 +81,9 @@ include("include/session.php");
 
                 <form action="process.php" method="POST">
                     <table align="left" border="0" cellspacing="0" cellpadding="3">
-                        <tr><td>Vartotojo vardas:</td><td><input type="text" name="user" maxlength="30" value="<? echo $form->value("user"); ?>"></td><td><? echo $form->error("user"); ?></td></tr>
-                        <tr><td>Slaptažodis:</td><td><input type="password" name="pass" maxlength="30" value="<? echo $form->value("pass"); ?>"></td><td><? echo $form->error("pass"); ?></td></tr>
-                        <tr><td colspan="2" align="left"><input type="checkbox" name="remember" <? if ($form->value("remember") != "") {
+                        <tr><td>Vartotojo vardas:</td><td><input type="text" name="user" maxlength="30" value="<?php echo $form->value("user"); ?>"></td><td><?php echo $form->error("user"); ?></td></tr>
+                        <tr><td>Slaptažodis:</td><td><input type="password" name="pass" maxlength="30" value="<?php echo $form->value("pass"); ?>"></td><td><?php echo $form->error("pass"); ?></td></tr>
+                        <tr><td colspan="2" align="left"><input type="checkbox" name="remember" <?php if ($form->value("remember") != "") {
             echo "pažymėta";
         } ?>>
                                 <font size="2">Atsiminti mane &nbsp;&nbsp;&nbsp;&nbsp;
@@ -92,7 +92,7 @@ include("include/session.php");
                         <tr><td colspan="2" align="left"><br><font size="2">[<a href="forgotpass.php">Pamiršote slaptažodį?</a>]</font></td><td align="right"></td></tr>
                         <tr><td colspan="2" align="left"><br>Nesate užsiregistravę? <a href="register.php">Registruotis</a></td></tr>
 
-                        <?
+                        <?php
                         echo "<tr><td colspan=\"2\" align=\"left\"><br>";
                         echo "<b>Vartotojų iš viso:</b> " . $database->getNumMembers() . "<br>";
                         echo "Yra $database->num_active_users registruotų vartotojų ir ";
@@ -103,7 +103,7 @@ include("include/session.php");
                     </table>
                 </form>
 
-                <?
+                <?php
             } //Formos pabaiga
         }
         ?>
