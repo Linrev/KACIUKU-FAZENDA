@@ -36,6 +36,7 @@ while ($row = mysql_fetch_array($res)){
         echo '<i><span class="ingredients">'.$inner_row['ingredients'].'</span></i>';
         echo '<div align="right"><button class="btn btn-success btnadd" onclick="Add(25,-1);">';
         echo '<span class="glyphicon glyphicon-plus"></span></button></div>';
+        $counter += 1;
     }
 }
 ?>
