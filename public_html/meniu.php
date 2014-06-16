@@ -17,7 +17,7 @@ include("include/session.php");
 	echo "<img src=\"pictures/top.png\" /><br>";
 	?>
 
-<a href="naujas_patiekalas">Ivesti nauja patiekala</a>
+<a href="naujas_patiekalas.php">Ivesti nauja patiekala</a>
 	
 
 	<h1> Karstieji patiekalai </h1>
